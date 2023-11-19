@@ -1,0 +1,196 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+header,
+nav,
+#enlaces,
+main,
+aside,
+footer {
+  width: 100%;
+  min-height: 50px;
+  border: 1px solid #429ce0;
+  text-align: center;
+  padding-top: 20px;
+  margin: 5px 5px;
+}
+
+header {
+  grid-area: header;
+}
+
+nav {
+  grid-area: nav;
+}
+
+aside {
+  grid-area: aside;
+}
+
+footer {
+  grid-area: footer;
+}
+
+main {
+  grid-area: main;
+}
+#enlaces {
+  grid-area: enlaces;
+  display: none;
+}
+
+h1 {
+  text-align: center;
+}
+
+form {
+  margin: 0 auto;
+  width: 60%;
+  padding: 10px;
+}
+
+label,
+input,
+textarea {
+  display: block;
+  width: 100%;
+  height: 2em;
+}
+
+input,
+textarea {
+  padding: 2px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid blue;
+}
+
+textarea {
+  min-height: 50px;
+}
+
+fieldset {
+  border: none;
+  margin-bottom: 20px;
+}
+legend,
+label {
+  display: none;
+}
+
+legend {
+  text-align: center;
+}
+button {
+  margin-top: 10px;
+  width: 100%;
+  height: 50px;
+  background-color: #748dea;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 1.2em;
+  box-shadow: 5px 5px 1px #78857e;
+}
+
+/* Tablet */
+@media (min-width: 680px) {
+  legend {
+    color: darkblue;
+  }
+  label,
+  legend {
+    display: block;
+  }
+  input,
+  textarea,
+  fieldset {
+    border: 1px solid darkblue;
+  }
+  header,
+  nav,
+  main,
+  aside,
+  footer {
+    height: auto;
+    width: auto;
+  }
+
+  body {
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: 1fr 1fr 8fr 1fr;
+    grid-template-columns: 3fr 1fr;
+    grid-template-areas:
+      "header header"
+      "nav aside"
+      "main aside"
+      "footer footer";
+  }
+}
+
+/* Ordenador */
+@media (min-width: 1024px) {
+  legend {
+    display: block;
+  }
+  input,
+  textarea {
+    border: 1px dotted darkblue;
+  }
+  input,
+  textarea {
+    border-radius: 0;
+  }
+  input {
+    border-top: none;
+    border-right: none;
+    border-left: none;
+  }
+  button {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+  }
+  label {
+    /* display: inline; */
+    width: 30%;
+    text-align: right;
+  }
+  .linea {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+
+  #enlaces {
+    display: block;
+  }
+
+  header,
+  #enlaces,
+  nav,
+  main,
+  aside,
+  footer {
+    height: auto;
+    width: auto;
+  }
+
+  body {
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: 1fr 1fr 5fr 1fr;
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-areas:
+      "header header header"
+      "nav nav nav"
+      "enlaces main aside"
+      "footer footer footer";
+  }
+}
